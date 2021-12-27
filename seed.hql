@@ -27,8 +27,9 @@ INSERT INTO TABLE work_dataeng.generation_tatielle VALUES
 )ROW FORMAT DELIMITEDFIELDS TERMINATED BY ','
 STORED AS TEXTFILE TBLPROPERTIES ('skip.header.line.count'='1')
 
-LOAD DATA INPATH '/ user/ hive/ pokemon.csv' INTO TABLE pokemon_tatielle_ext;
-
+/* Carregando os dados*/
+LOAD DATA INPATH '/user/hive/pokemon.csv' INTO TABLE pokemon_tatielle_ext;
+ 
 /*POPULAR TABELA*/
 INSERT INTO TABLE work_dataeng.pokemon_tatielle SELECT * FROM pokemon_tatielle_ext
 
