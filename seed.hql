@@ -38,6 +38,7 @@ SELECT * FROM work_dataeng.pokemon_tatielle LIMIT 50;
 
 
 /*Comparando tempo de execução de HIVE( Criando join nas tabelas) */
+/* tempo de execução Hive 48s */
 
 select * from work_dataeng.pokemon_tatielle as  P
 		join work_dataeng.generation_tatielle as G 
@@ -45,6 +46,7 @@ select * from work_dataeng.pokemon_tatielle as  P
 
 
 /*Comparando tempo de execução Impala*/
+/*1.68s impala e o mais rapido */
 
 select G.generation, P.* from work_dataeng.generation_tatielle G
 		join work_dataeng.pokemon_tatielle P  
