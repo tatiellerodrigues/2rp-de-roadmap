@@ -26,32 +26,31 @@ INSERT INTO TABLE work_dataeng.generation_tatielle VALUES
 	generation int
 )ROW FORMAT DELIMITEDFIELDS TERMINATED BY ','
 STORED AS TEXTFILE TBLPROPERTIES ('skip.header.line.count'='1')
+LOAD DATA INPATH '/ user/ hive/ pokemon.csv INSERT TABLE pokemon_tatielle_ext'/
 
-
-# consulta Hive que carrega dados em uma tabela Hive.
-
-IMPORTAÇAO CSV 
-LOAD DATA INPATH '/ user/ hive/ pokemon.csv INSERT TABLE pokemon_tatielle_ext;
-
-
-POPULAR TABELA
+/*POPULAR TABELA*/
 INSERT INTO TABLE work_dataeng.pokemon_tatielle SELECT * FROM pokemon_tatielle_ext
 
+/*limitanto o numero de view da tabela */
 SELECT * FROM work_dataeng.pokemon_tatielle LIMIT 50;
 
 
-Comparando tempo de execução de HIVE( Criando join nas tabelas) 
+/*Comparando tempo de execução de HIVE( Criando join nas tabelas) */
 
 select * from work_dataeng.pokemon_tatielle as  P
 		join work_dataeng.generation_tatielle as G 
 		on P.generation = G.generation;
 
 
-Comparando tempo de execução Impala
+/*Comparando tempo de execução Impala*/
 
 select G.generation, P.* from work_dataeng.generation_tatielle G
 		join work_dataeng.pokemon_tatielle P  
 		on G.generation = P.generation;
+
+
+
+
 
 
 
