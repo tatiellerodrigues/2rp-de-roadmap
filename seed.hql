@@ -37,6 +37,7 @@ LOAD DATA INPATH '/ user/ hive/ pokemon.csv INSERT TABLE pokemon_tatielle_ext;
 POPULAR TABELA
 INSERT INTO TABLE work_dataeng.pokemon_tatielle SELECT * FROM pokemon_tatielle_ext
 
+# limitanto o numero de view da tabela
 SELECT * FROM work_dataeng.pokemon_tatielle LIMIT 50;
 
 

@@ -5,5 +5,5 @@
 --sqoop export 
 --export-dir \
 /user/hive/warehouse/work_dataeng.db/pokemon_tatielle \
---table pokemon_Leonardo_tatielle \
+--table pokemon_tatielle \
 --columns idnum, name, hp, speed
