@@ -2,10 +2,10 @@
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.getOrCreate()
 
-#exportando arquivo csv pokemon
+#exportando arquivo pokemon
 df_pk = spark.table("work_dataeng.pokemon_tatielle_ext");
 
-#exportando arquivo csv generation
+#exportando arquivo generation
 df_gene = spark.table("work_dataeng.generation_tatielle")
 
 #filtrando as tabelas
