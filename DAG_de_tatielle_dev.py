@@ -13,7 +13,8 @@ default_args={
     "retries": 3,
     "run_as_user": usuario,
     "proxy_user": usuario
-}
+ }
+
 
 with DAG(dag_id='de_tatielle_dev', schedule_interval=None, default_args = default_args, catchup=False) as dag:
 
@@ -34,8 +35,7 @@ with DAG(dag_id='de_tatielle_dev', schedule_interval=None, default_args = defaul
          
         )       
 
-        
-
+      
         t_pok = TwoRPSparkSubmitOperator(
                 task_id='pokemon_task',
                 name='pokemon_task',
